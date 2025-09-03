@@ -1,0 +1,19 @@
+h1 {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-style: bold;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+h3 , #sally {
+    color: blue;
+}
+
+#joe , #bob {
+    color: green;
+}
+
+img{
+    border-radius: 8px;
+}
