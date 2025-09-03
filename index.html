@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>นายสุวิจักขณ์ พรหมสถิตย์ | 67070191</title>
+</head>
+
+<body>
+    <header class="navbar center">
+        <div class="container between">
+            <a href="/" class="link">
+                <h1 class="geist-400">Suwijak <span class="text-sm text-red">67070191</span> </h1>
+            </a>
+            <ul class="menu flex ">
+                <li><a href="/lab-1-4/home.html" target="_blank" class="link">Lab 1-4</a></li>
+                <li><a href="/lab-5/vector.html" target="_blank" class="link">Lab 1-5</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="center">
+        <div class="container center">
+            <div class="card">
+                <img src="suwizx.jpeg" alt="suwijak promsatid" class="profile">
+                <div>
+                    <h2>Suwijak Promsatid</h2>
+                    <p class="text-red">67070191</p>
+                </div>
+                <div class="border">
+                    <h2 class="headline start">original image</h2>
+                    <img src="suvanapomm.jpeg" alt="suvanapomm" class="img">
+                </div>
+                <div class="border">
+                    <h2 class="headline start">filter effect</h2>
+                    <img src="suvanapomm.jpeg" alt="suvanapomm" class="img" id="filterRef">
+                </div>
+                <div class="border">
+                    <h2 class="headline start">treadmark</h2>
+                    <div>
+                        <svg id="rotate" viewBox="0 0 250 300" width="250" height="300" xmlns="http://www.w3.org/2000/svg">
+
+                            <path d="M 120 60
+           C 40 60, 40 150, 120 150
+           C 200 150, 200 240, 120 240" fill="none"  stroke="#ffffff" stroke-width="18"
+                                stroke-linecap="round" transform="rotate(0 125 150)" />
+                        </svg>
+                        <svg id="rotate" viewBox="0 0 240 300" width="240" height="300" xmlns="http://www.w3.org/2000/svg">
+                            <path id="letterP" d="M60 240 L60 60 L130 60 C170 60, 170 150, 130 150 L60 150" fill="none" stroke="currentColor"
+                                stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let img = document.getElementById("filterRef");
+
+    img.addEventListener("load", function () {
+        desaturateImage(img);
+    });
+
+
+    function desaturateImage(image) {
+        var canvas = document.createElement("canvas");
+
+        const style = window.getComputedStyle(image);
+        const width = parseFloat(style.width);
+        const height = parseFloat(style.height);
+
+        canvas.width = width;
+        canvas.height = height;
+
+        image.style.display = 'none';
+        image.parentNode.insertBefore(canvas, image.nextSibling);
+
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0, width, height);
+
+        var imgData = ctx.getImageData(0, 0, width, height);
+        for (var i = 0; i < imgData.data.length; i += 4) {
+            var gray = 0.2126 * imgData.data[i] +
+                0.7152 * imgData.data[i + 1] +
+                0.0722 * imgData.data[i + 2];
+            gray = gray * 0.5;
+            imgData.data[i] = gray;     // Red
+            imgData.data[i + 1] = gray; // Green
+            imgData.data[i + 2] = gray; // Blue
+        }
+        ctx.putImageData(imgData, 0, 0);
+    }
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,164 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geist', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px 20px;
+}
+.navbar {
+    border: 1px solid oklch(55.2% 0.016 285.938);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbar .container{
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .navbar .container{
+        flex-direction: row;
+    }
+}
+
+
+.menu{
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+}
+
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.link{
+    color: oklch(96.7% 0.001 286.375);
+    text-decoration: none;
+}
+
+.text-sm{
+    font-size: 14px;
+}
+
+.text-red{
+    color: oklch(71.2% 0.194 13.428);
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.between {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.card{
+    background-color: oklch(37% 0.013 285.805);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 100%;
+    width: 600px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: center;
+}
+
+.card h2{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card p {
+    text-align: center;
+}
+
+.profile {
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+}
+
+.headline {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: start;
+    text-transform: uppercase;
+    width: 100%;
+    color: oklch(71.2% 0.194 13.428);
+    margin-bottom: 10px;
+}
+
+.start{
+    text-align: start !important;
+}
+
+.border{
+    border-top: 1px solid oklch(55.2% 0.016 285.938);
+    width: 100%;
+    padding-top: 10px;
+}
+
+html{
+    background-color: oklch(21.6% 0.006 56.043);
+    color: oklch(96.7% 0.001 286.375);
+}
+
+.img{
+    max-width: 100%; 
+    aspect-ratio: 22/9;
+    object-fit: cover;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+canvas {
+    max-width: 100%;
+    aspect-ratio: 22/9;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+}
+
+#rotate {
+    animation: 4s linear infinite rotate;
+  }
+
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+
+    to {
+      rotate: 360deg;
+    }
+  }
